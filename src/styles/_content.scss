@@ -8,6 +8,19 @@
     border-radius: 20px;
     overflow: hidden;
     margin-right: 70px;
+    background-color: rgba(255, 255, 255, 0.1);
+    position: relative;
+    .block {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 0;
+      background-color: #fff;
+      z-index: 1;
+      transition: all 2s;
+    }
     img {
       width: 100%;
       height: 100%;
@@ -27,9 +40,10 @@
       color: #ec6a00;
       line-height: 40px;
       font-size: 24px;
-      padding-left: 30px;
+      padding: 0 30px;
       position: relative;
       margin: 35px 0;
+      overflow: hidden;
 
       &::before {
         content: "";
@@ -43,6 +57,17 @@
         border-bottom-right-radius: 4px;
         background-color: #eb6a00;
       }
+      &::after {
+        content: "”";
+        position: absolute;
+        top: 0;
+        transform: translateY(70%);
+        right: 0;
+        color: #ec6a00;
+        font-size: 104px;
+        font-family: "CircularStd-Book";
+        opacity: 0.4;
+      }
     }
     .text {
       font-family: "CircularStd-Book";
@@ -54,7 +79,7 @@
       display: flex;
       align-items: flex-start;
       margin-top: 35px;
-      margin-bottom: 45px;
+      margin-bottom: 70px;
       &-item {
         min-width: 230px;
         .val {
@@ -85,8 +110,22 @@
               color: #000;
             }
           }
+          .rates-val {
+            font-family: "CircularStd-Book";
+            color: #2e9014;
+            font-size: 18px;
+          }
         }
       }
     }
+  }
+}
+.infobox-container {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  & > * {
+    width: 247px;
   }
 }
