@@ -1,0 +1,131 @@
+@media only screen and (max-width: 1350px) {
+  .container {
+    padding: 0 30px;
+  }
+  .fixed-bg .gray::before {
+    transform: translateX(calc(-100% + 30px));
+  }
+  .fixed-bg .gray::after {
+    transform: translate(calc(100% - 30px));
+  }
+}
+@media only screen and (max-width: 1070px) {
+  .content .imagebox {
+    min-width: 400px;
+    height: 600px;
+  }
+  #header-logo-box {
+    width: 400px;
+  }
+  .fixed-bg .gray .flex .left {
+    width: 400px;
+  }
+  .search-results {
+    width: 100% !important;
+    left: 0 !important;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .container {
+    padding: 0;
+  }
+  .content .description {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .content .imagebox {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
+  .bg-image .left {
+    background-image: none;
+  }
+  .content {
+    padding: 0 30px;
+  }
+  header {
+    padding: 0 30px;
+    background-color: #ec6a00;
+    margin-bottom: 80px;
+    #header-logo-box {
+      width: auto;
+    }
+    form {
+      padding: 0 !important;
+      height: 120px !important;
+      flex: initial !important;
+      .search-input {
+        color: #fff !important;
+        &::placeholder {
+          color: #fff !important;
+        }
+      }
+      .search-results p {
+        padding: 30px 40px !important;
+      }
+    }
+  }
+  .visible {
+    opacity: 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  form .search-input {
+    font-size: 17px !important;
+    padding-left: 0 !important;
+  }
+  .content .description .rates {
+    flex-wrap: wrap;
+  }
+  .content .imagebox {
+    min-width: auto;
+    height: 400px;
+  }
+  #search-icon {
+    display: none;
+  }
+  .popularity-imagebox {
+    height: 60px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .content .description .rates-item {
+    justify-content: flex-start;
+  }
+  .content .description .rates-item:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  header {
+    margin-bottom: 40px;
+    form {
+      height: 80px !important;
+    }
+  }
+
+  header form .search-results p {
+    padding: 15px 30px !important;
+    font-size: 17px !important;
+  }
+  #header-logo-box svg {
+    height: 50px;
+  }
+  .content .description > .title {
+    font-size: 30px;
+  }
+  .content .description .quote {
+    font-size: 20px;
+    margin: 20px 0;
+  }
+}

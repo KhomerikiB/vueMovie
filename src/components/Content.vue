@@ -31,7 +31,9 @@
             </div>
           </div>
           <div class="rates-item flex-center">
-            <img src="../assets/trending.png" />
+            <div class="popularity-imagebox">
+              <img src="../assets/trending.png" />
+            </div>
             <div class="desc">
               <p class="title">POPULARITY</p>
               <div class="rates-val">{{movie.popularity}}</div>

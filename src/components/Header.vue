@@ -1,6 +1,6 @@
 <template>
   <header class="flex-space">
-    <div class="imagebox">
+    <div class="imagebox" id="header-logo-box">
       <a href="/">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +75,9 @@ export default {
     onChange() {
       axios
         .get(
-          `https://api.themoviedb.org/3/search/movie?api_key=941d2ab6394c4f9fbe9549d7a350b234&query=${
+          `https://api.themoviedb.org/3/search/movie?api_key=${
+            process.env.VUE_APP_KEY
+          }&query=${
             this.searchInput.length > 0 ? this.searchInput : " "
           }&page=1&include_adult=false`
         )
@@ -92,8 +94,8 @@ export default {
       this.$refs["search-results"].classList.add("active");
     },
     onSubmit(e) {
-      this.$emit("movieName", this.searchInput);
-      if (this.movieItems.length > 0) {
+      if (this.movieItems.length > 0 && this.searchInput.length > 0) {
+        this.$emit("movieName", this.searchInput);
         this.$refs["input"].blur();
         this.unfocus();
         this.searchInput = "";
@@ -113,7 +115,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.imagebox {
+header .imagebox {
   width: 500px;
 }
 form {

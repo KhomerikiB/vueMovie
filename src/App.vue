@@ -36,7 +36,7 @@ export default {
       this.loading = true;
       axios
         .get(
-          `https://api.themoviedb.org/3/movie/${id}?api_key=941d2ab6394c4f9fbe9549d7a350b234&language=en-US`
+          `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.VUE_APP_KEY}&language=en-US`
         )
         .then(response => {
           return response.data;
@@ -54,7 +54,7 @@ export default {
       axios
         .get(
           `
-https://api.themoviedb.org/3/search/movie?api_key=941d2ab6394c4f9fbe9549d7a350b234&language=en-US&query=${data}&page=1&include_adult=false`
+https://api.themoviedb.org/3/search/movie?api_key=${process.env.VUE_APP_KEY}&language=en-US&query=${data}&page=1&include_adult=false`
         )
         .then(response => {
           return response.data;
@@ -76,7 +76,7 @@ https://api.themoviedb.org/3/search/movie?api_key=941d2ab6394c4f9fbe9549d7a350b2
     let randomNumber = Math.floor(Math.random() * 10) + 1;
     axios
       .get(
-        `https://api.themoviedb.org/3/discover/movie?api_key=941d2ab6394c4f9fbe9549d7a350b234&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&primary_release_year=${randomYear}
+        `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.VUE_APP_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&primary_release_year=${randomYear}
 
 `
       )
