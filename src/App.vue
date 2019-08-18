@@ -46,7 +46,7 @@ export default {
           this.loading = false;
           this.backdropimage = data.backdrop_path;
         })
-        .catch(err => {
+        .catch(() => {
           this.loading = true;
         });
     },
@@ -60,9 +60,7 @@ https://api.themoviedb.org/3/search/movie?api_key=${process.env.VUE_APP_KEY}&lan
           return response.data;
         })
         .then(data => {
-          console.log(data);
           if (data.results.length > 0) {
-            console.log("exec");
             this.getMovieById(data.results[0].id);
           }
         });
